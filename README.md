@@ -8,15 +8,15 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## How to Deploy an Angular Application to GitHub
 
-To get more help on github pages deploygo check out the [NPM README](https://www.npmjs.com/package/angular-cli-ghpages).
+Run 'ng deploy --base-href https://alimohammadi-cbc.github.io/weather-check/' to deploy the project.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `ng build --prod --base-href https://alimohammadi-cbc.github.io/weather-check/` for a production build.
 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
