@@ -2,9 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 
-## Development server
+## Local Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## How to Deploy an Angular Application to GitHub
+
+To get more help on github pages deploygo check out the [NPM README](https://www.npmjs.com/package/angular-cli-ghpages).
 
 ## Code scaffolding
 
