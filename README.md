@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## How to Deploy an Angular Application to GitHub
 
-Run 'ng deploy --base-href https://alimohammadi-cbc.github.io/weather-check/' to deploy the project.
+Run `ng deploy --base-href https://alimohammadi-cbc.github.io/weather-check/` to deploy the project.
 
 ## Build
 
