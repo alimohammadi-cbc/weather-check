@@ -100,8 +100,8 @@ import {CityAutocompleteComponent} from './city/city-autocomplete.component';
     BrowserAnimationsModule,
   ],
   entryComponents: [],
-  declarations: [CityAutocompleteComponent],
-  bootstrap: [CityAutocompleteComponent],
+  declarations: [AppComponent, CityAutocompleteComponent],
+  bootstrap: [AppComponent],
   providers: []
 })
 

@@ -1,10 +1,16 @@
 <form class="example-form">
+  <p>
+    <mat-label>Weather Check over Angular</mat-label>
+  </p>
   <mat-form-field class="example-full-width">
-    <input type="text" placeholder="City" aria-label="City" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <input type="text" placeholder="{{myControl.value? 'City':'Please select...'}}" aria-label="City" matInput [formControl]="myControl" [matAutocomplete]="auto">
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
         {{option.name}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
+  <p *ngIf="myControl.value && myControl.value.name">
+  The weather for  {{myControl.value.name}} is:
+ </p>
 </form>
