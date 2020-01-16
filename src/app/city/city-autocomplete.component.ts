@@ -2,11 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import {CityService} from './city.service';
-
-export interface City {
-  name: string;
-}
+import {CityService, City} from './city.service';
 
 
 @Component({
@@ -23,6 +19,7 @@ export class CityAutocompleteComponent implements OnInit {
   }
 
   myControl = new FormControl();
+  result: any;
 
   options: City[] = [
     {name: 'Toronto'},
@@ -58,7 +55,8 @@ export class CityAutocompleteComponent implements OnInit {
   }
 
   private _checkWeather(city: string) {
-    console.log('Input changed');
-    console.log(this.cityService.getCityWeather(city));
+
+    this.cityService.getCityWeather(city).subscribe(data => this.result = data);
+
   }
 }
