@@ -63,12 +63,12 @@ export class CityAutocompleteComponent implements OnInit {
 
   }
 
-  private _getWeatherItem(item: string){
+  _getWeatherItem(item: string){
 
     return get(this.result, item);
   }
 
-  private _getWeatherIcon(){
+  _getWeatherIcon(){
 
     return 'http://openweathermap.org/img/w/' + this._getWeatherItem('weather[0].icon') + '.png';
   }
