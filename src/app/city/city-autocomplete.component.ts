@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {CityService, City} from './city.service';
+import { get } from 'lodash';
 
 
 @Component({
@@ -24,6 +25,8 @@ export class CityAutocompleteComponent implements OnInit {
   options: City[] = [
     {name: 'Toronto'},
     {name: 'Vancouver'},
+    {name: 'Montreal'},
+    {name: 'Ottawa'},
     {name: 'Quebec'}
   ];
   filteredOptions: Observable<City[]>;
@@ -58,5 +61,15 @@ export class CityAutocompleteComponent implements OnInit {
 
     this.cityService.getCityWeather(city).subscribe(data => this.result = data);
 
+  }
+
+  private _getWeatherItem(item: string){
+
+    return get(this.result, item);
+  }
+
+  private _getWeatherIcon(){
+
+    return 'http://openweathermap.org/img/w/' + this._getWeatherItem('weather[0].icon') + '.png';
   }
 }

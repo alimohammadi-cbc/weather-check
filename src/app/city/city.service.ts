@@ -24,6 +24,6 @@ export class CityService {
 
   // Uses http.get() to load data from a single API endpoint
   getCityWeather(cityName: string): Observable<any>{
-      return this.http.get(apiURL+'?q='+cityName+'&APPID='+apiID, httpOptions);
+      return this.http.get(apiURL+'?q='+cityName+'&APPID='+apiID+'&units=metric', httpOptions);
   }
 }

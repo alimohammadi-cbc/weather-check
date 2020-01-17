@@ -1,16 +1,55 @@
 <form class="example-form">
-  <p>
-    <mat-label>Weather Check over Angular</mat-label>
-  </p>
-  <mat-form-field class="example-full-width">
-    <input type="text" placeholder="{{myControl.value? 'City':'Please select...'}}" aria-label="City" matInput [formControl]="myControl" [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option.name}}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-  <p *ngIf="myControl.value && myControl.value.name && result && result.name === myControl.value.name">
-  The weather is: {{result.name}}
- </p>
+  <div class="limiter" >
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <mat-form-field>
+          <input type="text" placeholder="{{myControl.value? 'City':'Please select a city...'}}" aria-label="City" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option.name}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <div class="table100 ver1 m-b-110" *ngIf="myControl.value && myControl.value.name && result && result.name === myControl.value.name">
+
+          <div class="table100-head">
+            <table>
+              <thead>
+                <tr class="row100 head">
+                  <th class="cell100 column1">{{result.name}} weather over Angular</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+
+          <div class="table100-body js-pscroll">
+            <table>
+              <tbody>
+                <tr class="row100 body">
+                  <td class="cell100 column1">Description: {{_getWeatherItem('weather[0].main')}} <img src={{_getWeatherIcon()}} alt="Smiley face" height="42" width="42"></td>
+                </tr>
+                <tr class="row100 body">
+                  <td class="cell100 column1">Temperature: {{_getWeatherItem('main.temp')}} &#8451;</td>
+                </tr>
+                <tr class="row100 body">
+                  <td class="cell100 column1">Feels Like: {{_getWeatherItem('main.feels_like')}} &#8451;</td>
+                </tr>
+                <tr class="row100 body">
+                  <td class="cell100 column1">Humidity: {{_getWeatherItem('main.humidity')}} %</td>
+                </tr>
+                <tr class="row100 body">
+                  <td class="cell100 column1">Longitude: {{_getWeatherItem('coord.lon')}}</td>
+                </tr>
+                <tr class="row100 body">
+                  <td class="cell100 column1">Latitude: {{_getWeatherItem('coord.lat')}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </form>
